@@ -3,5 +3,6 @@ version: 2
 sources:
   - name: stripe
     database: raw
+    schema: stripe     # 👈 THIS WAS MISSING
     tables:
       - name: payment
