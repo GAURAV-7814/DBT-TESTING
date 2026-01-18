@@ -18,3 +18,4 @@ renamed as (
 )
 
 select * from renamed
+    from {{ source('jaffle_shop', 'customers') }}

@@ -20,3 +20,6 @@ renamed as (
 )
 
 select * from renamed
+        status
+
+    from {{ source('jaffle_shop', 'orders') }}

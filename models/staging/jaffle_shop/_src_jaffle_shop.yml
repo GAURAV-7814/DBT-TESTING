@@ -22,3 +22,26 @@ sources:
             data_tests:
               - unique
               - not_null    
+sources:
+  - name: jaffle_shop
+    config:
+      freshness:
+        warn_after:
+          count: 6
+          period: hour
+        error_after:
+          count: 24
+          period: day
+      loaded_at_field: _etl_loaded_at
+    database: raw  
+    schema: jaffle_shop  
+    tables:
+      - name: orders
+      - name: customers
+        freshness: null
+        
+        
+
+  - name: stripe
+    tables:
+      - name: payments
